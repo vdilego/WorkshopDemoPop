@@ -53,16 +53,16 @@ countries<-c("DEUTNP","ESP","FRATNP",
 deaths <- ReadHMD(what="Dx",
                   countries=countries,
                   interval="1x1",
-                  username = "vdilego@gmail.com",
-                  password = "02072016-Viva",
+                  username = "username here",
+                  password = "your password here",
                   save=F)$data %>%
   pivot_longer(4:6, names_to="sex", values_to="deaths")
 
 exposure <- ReadHMD(what="Ex",
                     countries=countries,
                     interval="1x1",
-                    username = "vdilego@gmail.com",
-                    password = "02072016-Viva",
+                    username = "username here",
+                    password = "your password here",
                     save=F)$data %>%
   pivot_longer(4:6, names_to="sex", values_to="exposure")
 
