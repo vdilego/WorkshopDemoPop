@@ -23,11 +23,14 @@ library(broom)
 #devtools::install_github("karthik/wesanderson")
 library(wesanderson)
 library(ggthemes)
+# devtools::install_github("alburezg/suffrager")
 library(suffrager)
+library(remotes)
+#remotes::install_github("cran/MortalitySmooth", dependencies = T)
+library(MortalitySmooth)
 
 # loading useful functions into environment
 source(here("0_Functions.R"))
-
 # setting path and loading health data
 hly.folder.silc <- here("HLY_SILC", "Data")
 
@@ -332,9 +335,8 @@ ggplot()+
 
 
 # bidimensional smoothing from Camarda for these countries until age 80
-library(MortalitySmooth)
 # Total Prevalence- doing this for estimating the lists, since Camarda´s package only accepts matrix-like formats
-# and a very restricted data format
+# and a very restricted data format. Check https://rdrr.io/cran/MortalitySmooth/man/MortalitySmooth-package.html
 
 # exposure - total limited + healthy - or the denominator of the prevalence
 hly.smooth_exp<-hly.80 %>%
